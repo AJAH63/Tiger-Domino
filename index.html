@@ -291,9 +291,11 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
       <div class="ib iand"><h4>🤖 Android (Chrome)</h4><div class="ist"><div class="isn">1</div><p>Abre en <b>Chrome</b></p></div><div class="ist"><div class="isn">2</div><p>Menú <code>⋮</code> → <code>Agregar a pantalla de inicio</code> o <code>Instalar app</code></p></div><div class="ist"><div class="isn">3</div><p>Confirma ✅</p></div></div>
       <div class="itip">💡 Se abre sin barras del navegador, el historial se conserva entre sesiones, carga más rápido.</div>
     </div>
+    <div style="text-align:center;padding:16px 10px 4px;border-top:1px solid var(--border);margin-top:12px;">
+      <p style="font-size:.65rem;color:var(--muted);line-height:1.5;">© 2026 Antonio Javier Alvarez · Houston, TX<br>Todos los derechos reservados</p>
+    </div>
   </div>
 </div>
-<div style="text-align:center;padding:12px 10px 4px;opacity:.5;"><p style="font-size:.6rem;color:var(--muted);line-height:1.5;">© 2026 Antonio Javier Alvarez · Houston, TX<br>Todos los derechos reservados</p></div>
 <nav class="bottom-nav">
   <button class="nav-btn active" id="navSetup" onclick="goTab('setup')"><span class="ni">⚙️</span>Configurar</button>
   <button class="nav-btn" id="navGame" onclick="goTab('game')"><span class="ni">🎮</span>Partida</button>
@@ -385,8 +387,4 @@ window.showRC=showRC;window.hideRC=hideRC;window.doReset=doReset;
 function confirmNG(){if(gameActive)cConfirm('¿Abandonar la partida actual?',function(){gameActive=false;goTab('setup');});else goTab('setup');}
 window.confirmNG=confirmNG;
 function cConfirm(msg,onY){var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;background:#000a;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';ov.innerHTML='<div style="background:#0f3460;border:1px solid #1e4d7b;border-radius:14px;padding:24px;max-width:300px;width:100%;text-align:center;"><p style="color:#eaf2ff;font-size:.9rem;margin-bottom:16px;">'+msg+'</p><div style="display:flex;gap:8px;"><button id="cy" style="flex:1;padding:10px;background:#e94560;border:none;color:#fff;border-radius:8px;font-weight:bold;cursor:pointer;">Sí</button><button id="cn" style="flex:1;padding:10px;background:transparent;border:1px solid #8899aa;color:#8899aa;border-radius:8px;cursor:pointer;">No</button></div></div>';document.body.appendChild(ov);ov.querySelector('#cy').onclick=function(){document.body.removeChild(ov);onY();};ov.querySelector('#cn').onclick=function(){document.body.removeChild(ov);};}
-loadLog();loadPol();if(polRounds.length>0)recalcStandings();updPI();
-})();
-</script>
-</body>
-</html>
+loadLog();loadPol();if(polRounds.length>0)re
