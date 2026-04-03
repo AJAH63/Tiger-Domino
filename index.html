@@ -125,7 +125,6 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
 .lppl{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;}
 .lppl span{background:#ffffff0a;border-radius:5px;padding:2px 6px;font-size:.7rem;}
 .ng{color:var(--muted);text-align:center;padding:24px;font-size:.85rem;line-height:1.6;}
-/* polla */
 .sysc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
 .sysb{border-radius:12px;padding:12px;cursor:pointer;border:2px solid var(--border);background:#ffffff06;}
 .sysb.sel{border-color:var(--accent2);background:#3a2500;}
@@ -188,7 +187,6 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
 .wc .za{background:#5a1e00;border:1px solid #e07030;color:#f5a623;border-radius:10px;padding:8px 12px;font-size:.9rem;font-weight:bold;margin-bottom:10px;display:none;}
 .wc p{color:var(--muted);margin-bottom:18px;font-size:.88rem;line-height:1.6;white-space:pre-line;}
 .wc button{padding:13px 28px;background:var(--accent);border:none;color:#fff;border-radius:10px;font-size:1rem;cursor:pointer;font-weight:bold;width:100%;}
-/* Install banner */
 .install-banner{display:none;background:#1a3a1a;border:1px solid var(--green);border-radius:12px;padding:12px 16px;margin:8px 12px;text-align:center;}
 .install-banner p{font-size:.82rem;color:#6edd6e;margin-bottom:8px;}
 .install-banner button{padding:10px 20px;border-radius:8px;border:none;font-weight:bold;cursor:pointer;font-size:.88rem;}
@@ -208,8 +206,6 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
   <button class="ib-dismiss" onclick="document.getElementById('installBanner').style.display='none'">Ahora no</button>
 </div>
 <div class="toast" id="toast"></div>
-
-<!-- SETUP -->
 <div class="page active" id="pageSetup">
   <div class="card" style="margin-top:8px;">
     <div class="ct">⚙️ Configurar Partida</div>
@@ -225,28 +221,14 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
     <button class="sb" onclick="startGame()">▶ Iniciar Partida</button>
   </div>
 </div>
-
-<!-- GAME -->
 <div class="page" id="pageGame">
   <div class="tc" id="turnCard" style="display:none;margin-top:8px;">
     <div class="tt">🎯 Turno de salida — Mano <span id="turnHN">1</span></div>
     <div class="tg" id="turnPlayers"></div>
   </div>
   <div class="pg" style="margin-top:8px;">
-    <div class="pc pa">
-      <div class="pti">🔵 Pareja A · C</div>
-      <div class="pto" id="pairAT">0</div><div class="ps">pts acumulados</div>
-      <div class="pr"><span class="pn" id="lA">A</span><span class="psc" id="sA">0</span></div>
-      <div class="pr"><span class="pn" id="lC">C</span><span class="psc" id="sC">0</span></div>
-      <div class="ss"><div class="sl">Secuencia</div><div class="sb2" id="seqA"></div></div>
-    </div>
-    <div class="pc pb">
-      <div class="pti">🔴 Pareja B · D</div>
-      <div class="pto" id="pairBT">0</div><div class="ps">pts acumulados</div>
-      <div class="pr"><span class="pn" id="lB">B</span><span class="psc" id="sB">0</span></div>
-      <div class="pr"><span class="pn" id="lD">D</span><span class="psc" id="sD">0</span></div>
-      <div class="ss"><div class="sl">Secuencia</div><div class="sb2" id="seqB"></div></div>
-    </div>
+    <div class="pc pa"><div class="pti">🔵 Pareja A · C</div><div class="pto" id="pairAT">0</div><div class="ps">pts acumulados</div><div class="pr"><span class="pn" id="lA">A</span><span class="psc" id="sA">0</span></div><div class="pr"><span class="pn" id="lC">C</span><span class="psc" id="sC">0</span></div><div class="ss"><div class="sl">Secuencia</div><div class="sb2" id="seqA"></div></div></div>
+    <div class="pc pb"><div class="pti">🔴 Pareja B · D</div><div class="pto" id="pairBT">0</div><div class="ps">pts acumulados</div><div class="pr"><span class="pn" id="lB">B</span><span class="psc" id="sB">0</span></div><div class="pr"><span class="pn" id="lD">D</span><span class="psc" id="sD">0</span></div><div class="ss"><div class="sl">Secuencia</div><div class="sb2" id="seqB"></div></div></div>
   </div>
   <div class="card">
     <div class="ct">📝 Mano #<span id="curHN">1</span> <span id="goalB" style="font-size:.7rem;background:var(--accent2);color:#000;border-radius:10px;padding:2px 8px;margin-left:6px;font-weight:700;"></span></div>
@@ -263,35 +245,23 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
   <div class="card hs"><h3>📋 Manos Jugadas</h3><div class="tw"><div id="histC"><p class="nh">Aún no se han jugado manos.</p></div></div></div>
   <div style="text-align:center;margin-bottom:8px;"><button onclick="confirmNG()" style="background:transparent;border:1px solid var(--muted);color:var(--muted);border-radius:8px;padding:8px 18px;font-size:.8rem;cursor:pointer;">↩ Abandonar Partida</button></div>
 </div>
-
-<!-- POLLA -->
 <div class="page" id="pagePolla">
   <div class="card" style="margin-top:8px;" id="pollaSetup">
     <div class="ct">🏆 La Polla — Torneo Individual</div>
-    <div style="margin-bottom:14px;">
-      <div class="ct" style="font-size:.75rem;margin-bottom:8px;">Selecciona el Sistema</div>
-      <div class="sysc">
-        <div class="sysb sel" id="sysSwiss" onclick="selSys('swiss')"><h4>🇨🇭 Sistema Suizo</h4><p>Ganadores vs ganadores. Ideal para torneos competitivos.</p></div>
-        <div class="sysb" id="sysRobin" onclick="selSys('robin')"><h4>🔄 Rotación Integral</h4><p>Todos juegan con todos. Perfecto para grupos sociales.</p></div>
-      </div>
+    <div style="margin-bottom:14px;"><div class="ct" style="font-size:.75rem;margin-bottom:8px;">Selecciona el Sistema</div>
+      <div class="sysc"><div class="sysb sel" id="sysSwiss" onclick="selSys('swiss')"><h4>🇨🇭 Sistema Suizo</h4><p>Ganadores vs ganadores. Ideal para torneos competitivos.</p></div><div class="sysb" id="sysRobin" onclick="selSys('robin')"><h4>🔄 Rotación Integral</h4><p>Todos juegan con todos. Perfecto para grupos sociales.</p></div></div>
     </div>
-    <div style="margin-bottom:14px;">
-      <div class="ct" style="font-size:.75rem;margin-bottom:8px;">Participantes</div>
+    <div style="margin-bottom:14px;"><div class="ct" style="font-size:.75rem;margin-bottom:8px;">Participantes</div>
       <div class="nr"><label>Jugadores:</label><input type="number" id="pNP" min="4" max="24" value="8" inputmode="numeric" onchange="updPI()"></div>
       <div class="nr"><label>Mesas:</label><input type="number" id="pNT" min="1" max="6" value="2" inputmode="numeric" onchange="updPI()"></div>
       <div class="nr"><label>Meta (pts):</label><input type="number" id="pG" min="50" max="500" value="100" inputmode="numeric"></div>
       <div id="byeInfo" style="display:none;font-size:.75rem;color:var(--accent2);margin-top:6px;padding:6px 10px;background:#3a2500;border-radius:8px;"></div>
     </div>
-    <div style="margin-bottom:14px;">
-      <div class="ct" style="font-size:.75rem;margin-bottom:8px;">Nombres de los Jugadores</div>
-      <div class="pni" id="pNames"></div>
-    </div>
+    <div style="margin-bottom:14px;"><div class="ct" style="font-size:.75rem;margin-bottom:8px;">Nombres de los Jugadores</div><div class="pni" id="pNames"></div></div>
     <button class="gnb" onclick="genTournament()">🎲 Generar Cuadro del Torneo</button>
   </div>
   <div id="pollaBracket" style="display:none;"></div>
 </div>
-
-<!-- TRACKER -->
 <div class="page" id="pageTracker">
   <div style="margin-top:8px;margin-bottom:10px;">
     <h2 style="font-size:.95rem;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📊 Registro de Partidas</h2>
@@ -301,40 +271,29 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
     </div>
     <div id="resetC" style="display:none;margin-top:8px;background:#1a0a0a;border:1px solid var(--accent);border-radius:10px;padding:12px;text-align:center;">
       <p style="font-size:.88rem;color:var(--text);margin-bottom:10px;">¿Seguro que deseas borrar todo el historial?</p>
-      <div style="display:flex;gap:8px;">
-        <button onclick="doReset()" style="flex:1;padding:10px;background:var(--accent);border:none;color:#fff;border-radius:8px;font-weight:bold;font-size:.88rem;cursor:pointer;">✓ Sí, Borrar</button>
-        <button onclick="hideRC()" style="flex:1;padding:10px;background:transparent;border:1px solid var(--muted);color:var(--muted);border-radius:8px;font-size:.88rem;cursor:pointer;">✗ Cancelar</button>
-      </div>
+      <div style="display:flex;gap:8px;"><button onclick="doReset()" style="flex:1;padding:10px;background:var(--accent);border:none;color:#fff;border-radius:8px;font-weight:bold;font-size:.88rem;cursor:pointer;">✓ Sí, Borrar</button><button onclick="hideRC()" style="flex:1;padding:10px;background:transparent;border:1px solid var(--muted);color:var(--muted);border-radius:8px;font-size:.88rem;cursor:pointer;">✗ Cancelar</button></div>
     </div>
   </div>
   <div class="card" id="sesSum"></div>
   <div id="gameLog"><p class="ng">Aún no hay partidas completadas.<br>¡Juega y gana para ver el historial!</p></div>
 </div>
-
-<!-- HELP -->
 <div class="page" id="pageInstr">
   <div class="card is" style="margin-top:8px;">
     <div class="ct">📖 Cómo Usar la App</div>
-    <div style="margin-bottom:14px;"><h3>⚙️ Partida Normal</h3><ul><li>Configura nombres y meta (100 o 200 pts), toca Iniciar.</li><li>Anota puntos por pareja — el mismo valor va a ambos jugadores.</li><li>Usa ↩ Revertir si cometiste un error en la última mano.</li></ul></div>
-    <div style="margin-bottom:14px;"><h3>🏆 La Polla</h3><ul><li>Ve a la pestaña Polla, elige sistema y configura el torneo.</li><li>Toca "🎮 Jugar esta mesa" para cargar los jugadores automáticamente en Partida.</li><li>Al terminar la partida el resultado se registra solo en el cuadro.</li></ul><div class="itip">💡 Los jugadores de La Polla se cargan automáticamente en Configurar al generar el torneo.</div></div>
-    <div style="margin-bottom:14px;"><h3>📐 Casos Especiales</h3><ul><li>🤝 Empate — ambas anotan igual → = XX.</li><li>— Sin puntos — campo vacío, no suma.</li></ul><div class="zi">👟 ZAPATO — Al finalizar si el perdedor tiene 0 puntos acumulados.</div></div>
-    <div style="margin-bottom:14px;"><h3>📲 Instalar en iPhone</h3>
-      <div class="ib iios"><h4>🍎 Safari — obligatorio</h4>
-        <div class="ist"><div class="isn">1</div><p>Abre en Safari (no Chrome)</p></div>
-        <div class="ist"><div class="isn">2</div><p>Toca <code>📤</code> en la barra inferior</p></div>
-        <div class="ist"><div class="isn">3</div><p>Toca <code>Agregar a pantalla de inicio</code></p></div>
-        <div class="ist"><div class="isn">4</div><p>Toca <code>Agregar</code> ✅</p></div>
-      </div>
-      <div class="ib iand"><h4>🤖 Android — Chrome</h4>
-        <div class="ist"><div class="isn">1</div><p>Abre en Chrome</p></div>
-        <div class="ist"><div class="isn">2</div><p>Menú <code>⋮</code> → <code>Agregar a pantalla de inicio</code></p></div>
-        <div class="ist"><div class="isn">3</div><p>Si no aparece, usa <code>Instalar app</code> en el menú ✅</p></div>
-      </div>
+    <div style="margin-bottom:14px;"><h3>⚙️ Configurar Partida</h3><ul><li>Ingresa los nombres de los 4 jugadores en sus parejas correspondientes.</li><li><b>🔵 Pareja Azul (A · C)</b> — comparten puntaje y se muestran en azul.</li><li><b>🔴 Pareja Roja (B · D)</b> — comparten puntaje y se muestran en rojo.</li><li>Selecciona la meta: <b>100</b> o <b>200</b> puntos.</li><li>Toca <b>▶ Iniciar Partida</b> para comenzar.</li></ul></div>
+    <div style="margin-bottom:14px;"><h3>🎮 Durante la Partida</h3><ul><li>Al finalizar cada mano, ingresa los puntos de cada pareja por separado.</li><li>El mismo puntaje se acredita a ambos jugadores de la pareja.</li><li>Si una pareja no anotó, deja el campo vacío (aparece como <b>—</b>).</li><li>Selecciona quién <b>inició</b> la mano tocando su nombre.</li><li>Toca <b>✔ Confirmar Mano</b> para registrar.</li></ul><div class="itip">🎯 <b>Turno de salida</b> — Al seleccionar quién sale en la primera mano, la app muestra automáticamente la rotación A→B→C→D para las manos siguientes.</div><div class="itip">↩ <b>Revertir</b> — Si cometiste un error, toca "↩ Revertir Última Mano" para deshacer el último registro.</div></div>
+    <div style="margin-bottom:14px;"><h3>📐 Casos Especiales</h3><ul><li><b>🤝 Empate</b> — Ambas parejas anotan igual en la misma mano. Se muestra como <b>= XX</b>.</li><li><b>— Sin puntos</b> — Campo vacío, no suma ni resta.</li></ul><div class="zi">👟 <b>ZAPATO</b> — Se anuncia automáticamente cuando la pareja perdedora termina con <b>0 puntos acumulados</b>. ¡Se puede compartir por WhatsApp!</div></div>
+    <div style="margin-bottom:14px;"><h3>🏆 La Polla — Torneo Individual</h3><p style="margin-bottom:8px;">Permite organizar torneos con <b>4 a 24 jugadores</b>.</p><ul><li><b>🇨🇭 Sistema Suizo</b> — Ganadores vs ganadores. Genera una ronda a la vez.</li><li><b>🔄 Rotación Integral</b> — Todos juegan con todos. Genera todas las rondas.</li><li>Si hay más jugadores que puestos, el sistema asigna <b>descansos (byes)</b> equitativamente.</li></ul><div class="itip">🎮 Toca "🎮 Jugar esta mesa en Partida" para cargar jugadores y arrancar. El resultado se registra solo en el cuadro.</div><div class="itip">🏅 Al completar todas las rondas, aparece el podio con 🥇🥈🥉.</div></div>
+    <div style="margin-bottom:14px;"><h3>📲 Compartir por WhatsApp</h3><ul><li><b>Al ganar</b> — Toca "📲 Compartir por WhatsApp" en la pantalla de victoria.</li><li><b>Zapato</b> — El mensaje incluye un anuncio especial 👟👟👟.</li><li><b>Clasificación</b> — En la Polla, toca "📲 Compartir Clasificación" para la tabla de posiciones.</li></ul></div>
+    <div style="margin-bottom:14px;"><h3>📊 Registro de Partidas</h3><ul><li>Guarda automáticamente cada partida completada.</li><li>Muestra victorias por pareja, zapatos, y puntos acumulados.</li><li><b>📥 Exportar CSV</b> — Descarga el historial para Excel.</li><li><b>🗑 Borrar Todo</b> — Elimina el historial (con confirmación).</li></ul></div>
+    <div style="margin-bottom:14px;"><h3>📲 Instalar en el Teléfono</h3>
+      <div class="ib iios"><h4>🍎 iPhone / iPad (Safari obligatorio)</h4><div class="ist"><div class="isn">1</div><p>Abre en <b>Safari</b> (no Chrome)</p></div><div class="ist"><div class="isn">2</div><p>Toca <code>📤</code> en la barra inferior</p></div><div class="ist"><div class="isn">3</div><p>Toca <code>Agregar a pantalla de inicio</code></p></div><div class="ist"><div class="isn">4</div><p>Confirma y toca <code>Agregar</code> ✅</p></div></div>
+      <div class="ib iand"><h4>🤖 Android (Chrome)</h4><div class="ist"><div class="isn">1</div><p>Abre en <b>Chrome</b></p></div><div class="ist"><div class="isn">2</div><p>Menú <code>⋮</code> → <code>Agregar a pantalla de inicio</code> o <code>Instalar app</code></p></div><div class="ist"><div class="isn">3</div><p>Confirma ✅</p></div></div>
+      <div class="itip">💡 Se abre sin barras del navegador, el historial se conserva entre sesiones, carga más rápido.</div>
     </div>
   </div>
 </div>
-
-<!-- NAV -->
+<div style="text-align:center;padding:12px 10px 4px;opacity:.5;"><p style="font-size:.6rem;color:var(--muted);line-height:1.5;">© 2026 Antonio Javier Alvarez · Houston, TX<br>Todos los derechos reservados</p></div>
 <nav class="bottom-nav">
   <button class="nav-btn active" id="navSetup" onclick="goTab('setup')"><span class="ni">⚙️</span>Configurar</button>
   <button class="nav-btn" id="navGame" onclick="goTab('game')"><span class="ni">🎮</span>Partida</button>
@@ -342,586 +301,91 @@ tbody td{padding:5px;text-align:center;vertical-align:middle;}
   <button class="nav-btn" id="navTracker" onclick="goTab('tracker')"><span class="ni">📊</span>Registro</button>
   <button class="nav-btn" id="navInstr" onclick="goTab('instr')"><span class="ni">📖</span>Ayuda</button>
 </nav>
-
-<!-- WIN -->
 <div id="wo">
   <div class="wc">
     <div class="tr">🏆</div>
     <h2 id="wt"></h2>
     <div class="za" id="za"></div>
     <p id="wm"></p>
-    <button onclick="closeWin()">🎮 Nueva Partida</button>
+    <button id="woShareBtn" onclick="shareWin()" style="padding:13px 28px;background:#25D366;border:none;color:#fff;border-radius:10px;font-size:1rem;cursor:pointer;font-weight:bold;width:100%;margin-bottom:8px;">📲 Compartir por WhatsApp</button>
+    <button id="woBtn1" onclick="closeWin()">🎮 Nueva Partida</button>
+    <button id="woBtn2" onclick="closeWinPolla()" style="display:none;margin-top:8px;padding:13px 28px;background:var(--purple);border:none;color:#fff;border-radius:10px;font-size:1rem;cursor:pointer;font-weight:bold;width:100%;">🏆 Continuar con la Polla</button>
   </div>
 </div>
-
 <script>
-// ── PWA: Service Worker + Install Prompt ──────
 (function(){
-  // Register service worker from separate file
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(function(){});
-  }
-  // Capture beforeinstallprompt for native install banner
-  var deferredPrompt = null;
-  window.addEventListener('beforeinstallprompt', function(e) {
-    e.preventDefault();
-    deferredPrompt = e;
-    var banner = document.getElementById('installBanner');
-    if (banner) banner.style.display = 'block';
-  });
-  var installBtn = document.getElementById('installBtn');
-  if (installBtn) {
-    installBtn.addEventListener('click', function() {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then(function() { deferredPrompt = null; });
-      }
-      document.getElementById('installBanner').style.display = 'none';
-    });
-  }
-  window.addEventListener('appinstalled', function() {
-    document.getElementById('installBanner').style.display = 'none';
-  });
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;var b=document.getElementById('installBanner');if(b)b.style.display='block';});
+var ib=document.getElementById('installBtn');
+if(ib){ib.addEventListener('click',function(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(function(){deferredPrompt=null;});}document.getElementById('installBanner').style.display='none';});}
+window.addEventListener('appinstalled',function(){document.getElementById('installBanner').style.display='none';});
 })();
 </script>
-
 <script>
 (function(){
-
-// ── state ─────────────────────────────────────
-var names={A:'A',B:'B',C:'C',D:'D'};
-var scores={A:0,B:0,C:0,D:0};
-var goal=100, handNum=0, handHist=[], starter=null;
-var gameLog=[], gameActive=false;
-var seqA=[], seqB=[];
-var ROT=['A','B','C','D'], siIdx=-1;
-var polSys='swiss', polPlayers=[], polRounds=[], polRound=0, polStand=[], polGoal=100, polTables=1;
-var pmRef=null;
-
-// ── storage ───────────────────────────────────
-function saveLog(){ try{localStorage.setItem('cts_v2',JSON.stringify(gameLog));}catch(e){} }
-function loadLog(){ try{var d=localStorage.getItem('cts_v2');if(d)gameLog=JSON.parse(d);}catch(e){} }
-function savePol(){ try{localStorage.setItem('cts_pol',JSON.stringify({s:polSys,p:polPlayers,r:polRounds,c:polRound,st:polStand,g:polGoal,t:polTables}));}catch(e){} }
-function loadPol(){ try{var d=localStorage.getItem('cts_pol');if(d){var x=JSON.parse(d);polSys=x.s||'swiss';polPlayers=x.p||[];polRounds=x.r||[];polRound=x.c||0;polStand=x.st||[];polGoal=x.g||100;polTables=x.t||1;}}catch(e){} }
-
-// ── helpers ───────────────────────────────────
-function gid(id){ return document.getElementById(id); }
-function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
-function findSt(id){ for(var i=0;i<polStand.length;i++){ if(polStand[i].id===id) return polStand[i]; } return null; }
-function findPl(id){ for(var i=0;i<polPlayers.length;i++){ if(polPlayers[i].id===id) return polPlayers[i]; } return null; }
-function plName(id){ var p=findPl(id); return p?p.name:'?'; }
-function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
-
-// ── toast ─────────────────────────────────────
-function toast(msg){ var t=gid('toast'); t.textContent=msg; t.style.display='block'; clearTimeout(t._t); t._t=setTimeout(function(){ t.style.display='none'; },2800); }
-
-// ── nav ───────────────────────────────────────
-function goTab(t){
-  ['setup','game','polla','tracker','instr'].forEach(function(n){
-    var pg=gid('page'+cap(n)); var nb=gid('nav'+cap(n));
-    if(pg) pg.classList.toggle('active',n===t);
-    if(nb) nb.classList.toggle('active',n===t);
-  });
-  if(t==='tracker') renderTracker();
-  if(t==='polla') renderPollaPage();
-}
+var names={A:'A',B:'B',C:'C',D:'D'};var scores={A:0,B:0,C:0,D:0};var goal=100,handNum=0,handHist=[],starter=null;var gameLog=[],gameActive=false;var seqA=[],seqB=[];var ROT=['A','B','C','D'],siIdx=-1;var polSys='swiss',polPlayers=[],polRounds=[],polRound=0,polStand=[],polGoal=100,polTables=1;var pmRef=null;var lastWinData=null;
+function saveLog(){try{localStorage.setItem('cts_v2',JSON.stringify(gameLog));}catch(e){}}
+function loadLog(){try{var d=localStorage.getItem('cts_v2');if(d)gameLog=JSON.parse(d);}catch(e){}}
+function savePol(){try{localStorage.setItem('cts_pol',JSON.stringify({s:polSys,p:polPlayers,r:polRounds,c:polRound,st:polStand,g:polGoal,t:polTables}));}catch(e){}}
+function loadPol(){try{var d=localStorage.getItem('cts_pol');if(d){var x=JSON.parse(d);polSys=x.s||'swiss';polPlayers=x.p||[];polRounds=x.r||[];polRound=x.c||0;polStand=x.st||[];polGoal=x.g||100;polTables=x.t||1;}}catch(e){}}
+function gid(id){return document.getElementById(id);}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function plName(id){var nid=Number(id);for(var i=0;i<polPlayers.length;i++){if(Number(polPlayers[i].id)===nid)return polPlayers[i].name;}return '?';}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function toast(msg){var t=gid('toast');t.textContent=msg;t.style.display='block';clearTimeout(t._t);t._t=setTimeout(function(){t.style.display='none';},2800);}
+function goTab(t){['setup','game','polla','tracker','instr'].forEach(function(n){var pg=gid('page'+cap(n));var nb=gid('nav'+cap(n));if(pg)pg.classList.toggle('active',n===t);if(nb)nb.classList.toggle('active',n===t);});if(t==='tracker')renderTracker();if(t==='polla')renderPollaPage();}
 window.goTab=goTab;
-
-// ── setup ─────────────────────────────────────
-function selGoal(g){ goal=g; gid('btn100').classList.toggle('active',g===100); gid('btn200').classList.toggle('active',g===200); }
+function selGoal(g){goal=g;gid('btn100').classList.toggle('active',g===100);gid('btn200').classList.toggle('active',g===200);}
 window.selGoal=selGoal;
-
-function startGame(){
-  names={
-    A:gid('nameA').value.trim()||names.A||'Jugador A',
-    B:gid('nameB').value.trim()||names.B||'Jugador B',
-    C:gid('nameC').value.trim()||names.C||'Jugador C',
-    D:gid('nameD').value.trim()||names.D||'Jugador D'
-  };
-  scores={A:0,B:0,C:0,D:0};
-  handNum=0; handHist=[]; starter=null; seqA=[]; seqB=[]; gameActive=true; siIdx=-1;
-  gid('ePA').value=''; gid('ePB').value='';
-  gid('nA').textContent=''; gid('nB').textContent='';
-  gid('emb').style.display='none';
-  gid('toast').style.display='none';
-  gid('undoBtn').style.display='none';
-  renderGame(); goTab('game');
-}
+function startGame(){names={A:gid('nameA').value.trim()||names.A||'Jugador A',B:gid('nameB').value.trim()||names.B||'Jugador B',C:gid('nameC').value.trim()||names.C||'Jugador C',D:gid('nameD').value.trim()||names.D||'Jugador D'};scores={A:0,B:0,C:0,D:0};handNum=0;handHist=[];starter=null;seqA=[];seqB=[];gameActive=true;siIdx=-1;gid('ePA').value='';gid('ePB').value='';gid('nA').textContent='';gid('nB').textContent='';gid('emb').style.display='none';gid('toast').style.display='none';gid('undoBtn').style.display='none';renderGame();goTab('game');}
 window.startGame=startGame;
-
-// ── entry ─────────────────────────────────────
-function onEC(){
-  var rA=gid('ePA').value, rB=gid('ePB').value;
-  var pA=rA===''?null:parseInt(rA)||0, pB=rB===''?null:parseInt(rB)||0;
-  gid('nA').textContent=pA!==null&&pA>0?'+'+pA+' a '+names.A+' y '+names.C:'';
-  gid('nB').textContent=pB!==null&&pB>0?'+'+pB+' a '+names.B+' y '+names.D:'';
-  gid('emb').style.display=(pA!==null&&pB!==null&&pA===pB&&pA>0)?'block':'none';
-}
+function onEC(){var rA=gid('ePA').value,rB=gid('ePB').value;var pA=rA===''?null:parseInt(rA)||0,pB=rB===''?null:parseInt(rB)||0;gid('nA').textContent=pA!==null&&pA>0?'+'+pA+' a '+names.A+' y '+names.C:'';gid('nB').textContent=pB!==null&&pB>0?'+'+pB+' a '+names.B+' y '+names.D:'';gid('emb').style.display=(pA!==null&&pB!==null&&pA===pB&&pA>0)?'block':'none';}
 window.onEC=onEC;
-
-// ── render game ───────────────────────────────
-function renderGame(){
-  ['A','B','C','D'].forEach(function(p){ gid('l'+p).textContent=names[p]; gid('s'+p).textContent=scores[p]; });
-  gid('pairAT').textContent=scores.A; gid('pairBT').textContent=scores.B;
-  gid('goalB').textContent='Meta: '+goal+' pts';
-  gid('curHN').textContent=handNum+1;
-  gid('undoBtn').style.display=handHist.length>0?'block':'none';
-  renderTurn(); renderSeq(); renderStarters(); renderHist();
-}
-
-function renderTurn(){
-  var card=gid('turnCard');
-  if(siIdx<0){ card.style.display='none'; return; }
-  card.style.display='block';
-  gid('turnHN').textContent=handNum+1;
-  var next=ROT[(siIdx+handNum)%4];
-  var c=gid('turnPlayers'); c.innerHTML='';
-  ROT.forEach(function(p){
-    var off=(ROT.indexOf(p)-siIdx+4)%4;
-    var isCur=(p===next);
-    var hArr=[]; for(var h=off+1;h<=20;h+=4) hArr.push(h);
-    var d=document.createElement('div');
-    d.className='tp'+(isCur?' cur':'');
-    d.innerHTML='<div class="tpi">'+(isCur?'🎯':'👤')+'</div><div class="tpn">'+names[p]+'</div><div class="tph">Sale: '+hArr.slice(0,3).join(', ')+'…</div>';
-    c.appendChild(d);
-  });
-}
-
-function renderSeq(){
-  gid('seqA').innerHTML=seqA.map(function(v){ return v===null?'<span class="bub ab">—</span>':v==='='?'<span class="bub eb">=</span>':'<span class="bub ab">'+v+'</span>'; }).join('');
-  gid('seqB').innerHTML=seqB.map(function(v){ return v===null?'<span class="bub bb">—</span>':v==='='?'<span class="bub eb">=</span>':'<span class="bub bb">'+v+'</span>'; }).join('');
-}
-
-function renderStarters(){
-  var c=gid('starterBtns'); c.innerHTML='';
-  ['A','B','C','D'].forEach(function(p){
-    var b=document.createElement('button');
-    b.className='stbtn'+(starter===p?' active':'');
-    b.textContent=names[p];
-    b.onclick=function(){ starter=p; renderStarters(); };
-    c.appendChild(b);
-  });
-}
-
-// ── add score ─────────────────────────────────
-function addScore(){
-  var rA=gid('ePA').value, rB=gid('ePB').value;
-  if(rA===''&&rB===''){ alert('Ingresa el puntaje de al menos una pareja.'); return; }
-  var pA=rA===''?null:Math.max(0,parseInt(rA)||0);
-  var pB=rB===''?null:Math.max(0,parseInt(rB)||0);
-  var emp=pA!==null&&pB!==null&&pA===pB&&pA>0;
-  if(handNum===0&&starter&&siIdx<0){ siIdx=ROT.indexOf(starter); if(siIdx<0) siIdx=0; }
-  handNum++;
-  var st=starter?names[starter]:'—';
-  var addA=pA!==null?pA:0, addC=pA!==null?pA:0, addB=pB!==null?pB:0, addD=pB!==null?pB:0;
-  var prev={A:scores.A,B:scores.B,C:scores.C,D:scores.D};
-  scores.A+=addA; scores.C+=addC; scores.B+=addB; scores.D+=addD;
-  if(emp){ seqA.push('='); seqB.push('='); } else { seqA.push(pA); seqB.push(pB); }
-  handHist.push({hand:handNum,st:st,stK:starter,pA:pA,pB:pB,addA:addA,addC:addC,addB:addB,addD:addD,
-    cA:scores.A,cC:scores.C,cB:scores.B,cD:scores.D,emp:emp,
-    prev:prev,psA:seqA.slice(0,-1),psB:seqB.slice(0,-1),psi:siIdx});
-  var tm='';
-  if(emp) tm='🤝 Empate en la mano';
-  else if(pA!==null&&pB===null) tm='✅ Mano para '+names.A+' & '+names.C;
-  else if(pB!==null&&pA===null) tm='✅ Mano para '+names.B+' & '+names.D;
-  else if(pA!==null&&pB!==null){ if(pA>pB) tm='✅ Mano para '+names.A+' & '+names.C; else if(pB>pA) tm='✅ Mano para '+names.B+' & '+names.D; }
-  if(tm) toast(tm);
-  gid('ePA').value=''; gid('ePB').value='';
-  gid('nA').textContent=''; gid('nB').textContent='';
-  gid('emb').style.display='none';
-  starter=null;
-  renderGame(); checkWin();
-}
+function renderGame(){['A','B','C','D'].forEach(function(p){gid('l'+p).textContent=names[p];gid('s'+p).textContent=scores[p];});gid('pairAT').textContent=scores.A;gid('pairBT').textContent=scores.B;gid('goalB').textContent='Meta: '+goal+' pts';gid('curHN').textContent=handNum+1;gid('undoBtn').style.display=handHist.length>0?'block':'none';renderTurn();renderSeq();renderStarters();renderHist();}
+function renderTurn(){var card=gid('turnCard');if(siIdx<0){card.style.display='none';return;}card.style.display='block';gid('turnHN').textContent=handNum+1;var next=ROT[(siIdx+handNum)%4];var c=gid('turnPlayers');c.innerHTML='';ROT.forEach(function(p){var off=(ROT.indexOf(p)-siIdx+4)%4;var isCur=(p===next);var hArr=[];for(var h=off+1;h<=20;h+=4)hArr.push(h);var d=document.createElement('div');d.className='tp'+(isCur?' cur':'');d.innerHTML='<div class="tpi">'+(isCur?'🎯':'👤')+'</div><div class="tpn">'+names[p]+'</div><div class="tph">Sale: '+hArr.slice(0,3).join(', ')+'…</div>';c.appendChild(d);});}
+function renderSeq(){gid('seqA').innerHTML=seqA.map(function(v){return v===null?'<span class="bub ab">—</span>':v==='='?'<span class="bub eb">=</span>':'<span class="bub ab">'+v+'</span>';}).join('');gid('seqB').innerHTML=seqB.map(function(v){return v===null?'<span class="bub bb">—</span>':v==='='?'<span class="bub eb">=</span>':'<span class="bub bb">'+v+'</span>';}).join('');}
+function renderStarters(){var c=gid('starterBtns');c.innerHTML='';['A','B','C','D'].forEach(function(p){var b=document.createElement('button');b.className='stbtn'+(starter===p?' active':'');b.textContent=names[p];b.onclick=function(){starter=p;renderStarters();};c.appendChild(b);});}
+function addScore(){var rA=gid('ePA').value,rB=gid('ePB').value;if(rA===''&&rB===''){alert('Ingresa el puntaje de al menos una pareja.');return;}var pA=rA===''?null:Math.max(0,parseInt(rA)||0);var pB=rB===''?null:Math.max(0,parseInt(rB)||0);var emp=pA!==null&&pB!==null&&pA===pB&&pA>0;if(handNum===0&&starter&&siIdx<0){siIdx=ROT.indexOf(starter);if(siIdx<0)siIdx=0;}handNum++;var st=starter?names[starter]:'—';var addA=pA!==null?pA:0,addC=pA!==null?pA:0,addB=pB!==null?pB:0,addD=pB!==null?pB:0;var prev={A:scores.A,B:scores.B,C:scores.C,D:scores.D};scores.A+=addA;scores.C+=addC;scores.B+=addB;scores.D+=addD;if(emp){seqA.push('=');seqB.push('=');}else{seqA.push(pA);seqB.push(pB);}handHist.push({hand:handNum,st:st,stK:starter,pA:pA,pB:pB,addA:addA,addC:addC,addB:addB,addD:addD,cA:scores.A,cC:scores.C,cB:scores.B,cD:scores.D,emp:emp,prev:prev,psA:seqA.slice(0,-1),psB:seqB.slice(0,-1),psi:siIdx});var tm='';if(emp)tm='🤝 Empate en la mano';else if(pA!==null&&pB===null)tm='✅ Mano para '+names.A+' & '+names.C;else if(pB!==null&&pA===null)tm='✅ Mano para '+names.B+' & '+names.D;else if(pA!==null&&pB!==null){if(pA>pB)tm='✅ Mano para '+names.A+' & '+names.C;else if(pB>pA)tm='✅ Mano para '+names.B+' & '+names.D;}if(tm)toast(tm);gid('ePA').value='';gid('ePB').value='';gid('nA').textContent='';gid('nB').textContent='';gid('emb').style.display='none';starter=null;renderGame();checkWin();}
 window.addScore=addScore;
-
-function undoLast(){
-  if(!handHist.length) return;
-  var l=handHist.pop();
-  scores.A=l.prev.A; scores.B=l.prev.B; scores.C=l.prev.C; scores.D=l.prev.D;
-  seqA=l.psA.slice(); seqB=l.psB.slice(); siIdx=l.psi; handNum--;
-  toast('↩ Mano '+l.hand+' revertida');
-  renderGame();
-}
+function undoLast(){if(!handHist.length)return;var l=handHist.pop();scores.A=l.prev.A;scores.B=l.prev.B;scores.C=l.prev.C;scores.D=l.prev.D;seqA=l.psA.slice();seqB=l.psB.slice();siIdx=l.psi;handNum--;toast('↩ Mano '+l.hand+' revertida');renderGame();}
 window.undoLast=undoLast;
-
-// ── check win ─────────────────────────────────
-function checkWin(){
-  var pa=scores.A, pb=scores.B;
-  if(pa<goal&&pb<goal) return;
-  var aW=pa>=pb, ls=aW?pb:pa, isZ=ls===0;
-  var wp=aW?'🔵 Pareja A · C':'🔴 Pareja B · D';
-  var lp=aW?'Pareja B · D':'Pareja A · C';
-  var n1=aW?names.A:names.B, n2=aW?names.C:names.D, ws=aW?pa:pb;
-  gameLog.push({gameNum:gameLog.length+1,
-    date:new Date().toLocaleDateString('es-VE',{day:'2-digit',month:'2-digit',year:'numeric'}),
-    time:new Date().toLocaleTimeString('es-VE',{hour:'2-digit',minute:'2-digit'}),
-    names:{A:names.A,B:names.B,C:names.C,D:names.D},goal:goal,winner:aW?'A':'B',
-    winnerPair:wp,loserPair:lp,scorePA:pa,scorePB:pb,
-    scoreA:scores.A,scoreB:scores.B,scoreC:scores.C,scoreD:scores.D,
-    hands:handNum,isZapato:isZ});
-  saveLog();
-  if(pmRef){
-    var m=polRounds[pmRef.ri]&&polRounds[pmRef.ri].matches[pmRef.mi];
-    if(m&&!m.done){
-      m.score1=pa; m.score2=pb; m.done=true;
-      var wt=pa>=pb?m.team1:m.team2, lt=pa>=pb?m.team2:m.team1;
-      wt.forEach(function(id){ var s=findSt(id); if(s){ s.wins++; s.pts+=pa>=pb?pa:pb; } });
-      lt.forEach(function(id){ var s=findSt(id); if(s){ s.losses++; s.ptsAgainst+=pa>=pb?pa:pb; } });
-      savePol();
-    }
-    pmRef=null;
-  }
-  gid('wt').textContent='¡'+wp+' Gana!';
-  gid('wm').textContent=n1+' y '+n2+' llegaron a '+ws+' puntos en '+handNum+' manos.'+(isZ?'\n\n¡La '+lp+' no anotó ni un punto!':'');
-  var za=gid('za'); if(isZ){ za.textContent='👟 ¡ZAPATO a la '+lp+'!'; za.style.display='block'; } else za.style.display='none';
-  gid('wo').classList.add('show');
-  gameActive=false;
-}
-
-function closeWin(){ gid('wo').classList.remove('show'); goTab('setup'); }
+function checkWin(){var pa=scores.A,pb=scores.B;if(pa<goal&&pb<goal)return;var aW=pa>=pb,ls=aW?pb:pa,isZ=ls===0;var wp=aW?'🔵 Pareja A · C':'🔴 Pareja B · D';var lp=aW?'Pareja B · D':'Pareja A · C';var n1=aW?names.A:names.B,n2=aW?names.C:names.D,ws=aW?pa:pb;gameLog.push({gameNum:gameLog.length+1,date:new Date().toLocaleDateString('es-VE',{day:'2-digit',month:'2-digit',year:'numeric'}),time:new Date().toLocaleTimeString('es-VE',{hour:'2-digit',minute:'2-digit'}),names:{A:names.A,B:names.B,C:names.C,D:names.D},goal:goal,winner:aW?'A':'B',winnerPair:wp,loserPair:lp,scorePA:pa,scorePB:pb,scoreA:scores.A,scoreB:scores.B,scoreC:scores.C,scoreD:scores.D,hands:handNum,isZapato:isZ});saveLog();var wasPolla=false;if(pmRef){wasPolla=true;var rnd=polRounds[pmRef.ri];var mx=rnd?rnd.matches[pmRef.mi]:null;if(mx&&!mx.done){mx.score1=pa;mx.score2=pb;mx.done=true;recalcStandings();savePol();}pmRef=null;}gid('wt').textContent='¡'+wp+' Gana!';gid('wm').textContent=n1+' y '+n2+' llegaron a '+ws+' puntos en '+handNum+' manos.'+(isZ?'\n\n¡La '+lp+' no anotó ni un punto!':'');var za=gid('za');if(isZ){za.textContent='👟 ¡ZAPATO a la '+lp+'!';za.style.display='block';}else za.style.display='none';lastWinData={names:{A:names.A,B:names.B,C:names.C,D:names.D},winnerPair:wp,loserPair:lp,scorePA:pa,scorePB:pb,hands:handNum,goal:goal,isZapato:isZ,n1:n1,n2:n2,date:new Date().toLocaleDateString('es-VE',{day:'2-digit',month:'2-digit',year:'numeric'}),time:new Date().toLocaleTimeString('es-VE',{hour:'2-digit',minute:'2-digit'})};if(wasPolla){gid('woBtn1').style.display='none';gid('woBtn2').style.display='block';}else{gid('woBtn1').style.display='block';gid('woBtn2').style.display='none';}gid('wo').classList.add('show');gameActive=false;}
+function closeWin(){gid('wo').classList.remove('show');gid('woBtn1').style.display='block';gid('woBtn2').style.display='none';goTab('setup');}
 window.closeWin=closeWin;
-
-// ── hand history ──────────────────────────────
-function renderHist(){
-  var c=gid('histC');
-  if(!handHist.length){ c.innerHTML='<p class="nh">Aún no se han jugado manos.</p>'; return; }
-  var h='<table><thead><tr><th>#</th><th>Inició</th><th style="color:#5bb3e0">A·C</th><th style="color:#5bb3e0">Acum</th><th style="color:#e05b9a">B·D</th><th style="color:#e05b9a">Acum</th></tr></thead><tbody>';
-  handHist.forEach(function(x){
-    var cA=x.pA===null?'<span style="color:var(--muted)">—</span>':x.emp?'<span class="te">='+x.pA+'</span>':'<b style="color:#5bb3e0">'+x.pA+'</b>';
-    var cB=x.pB===null?'<span style="color:var(--muted)">—</span>':x.emp?'<span class="te">='+x.pB+'</span>':'<b style="color:#e05b9a">'+x.pB+'</b>';
-    var aA=x.pA!==null?'<small style="color:var(--muted)">'+x.cA+'</small>':'<span style="color:var(--muted)">—</span>';
-    var aB=x.pB!==null?'<small style="color:var(--muted)">'+x.cB+'</small>':'<span style="color:var(--muted)">—</span>';
-    h+='<tr><td><b>'+x.hand+'</b></td><td style="color:var(--accent2);font-size:.7rem">'+x.st+'</td><td>'+cA+'</td><td>'+aA+'</td><td>'+cB+'</td><td>'+aB+'</td></tr>';
-  });
-  h+='</tbody></table>'; c.innerHTML=h;
-}
-
-// ── polla setup ───────────────────────────────
-function selSys(s){
-  polSys=s;
-  gid('sysSwiss').classList.toggle('sel',s==='swiss');
-  gid('sysRobin').classList.toggle('sel',s==='robin');
-}
+function closeWinPolla(){gid('wo').classList.remove('show');gid('woBtn1').style.display='block';gid('woBtn2').style.display='none';goTab('polla');}
+window.closeWinPolla=closeWinPolla;
+function buildWinMsg(){if(!lastWinData)return '';var d=lastWinData;var lines=[];lines.push('🐯 *CARAYACA TIGER SON\'S*');lines.push('🎲 Dominó Caribeño');lines.push('━━━━━━━━━━━━━━━━━');if(d.isZapato){lines.push('');lines.push('👟👟👟 *¡¡ZAPATO!!* 👟👟👟');lines.push('¡La '+d.loserPair+' no anotó ni un punto!');lines.push('');}lines.push('🏆 *'+d.winnerPair+' GANA*');lines.push('');lines.push('🔵 '+d.names.A+' & '+d.names.C+': *'+d.scorePA+' pts*');lines.push('🔴 '+d.names.B+' & '+d.names.D+': *'+d.scorePB+' pts*');lines.push('');lines.push('📊 '+d.hands+' manos · Meta: '+d.goal+' pts');lines.push('📅 '+d.date+' '+d.time);if(d.isZapato){lines.push('');lines.push('👟 _'+d.n1+' y '+d.n2+' le dieron ZAPATO a la '+d.loserPair+'_');}return lines.join('\n');}
+function shareWin(){var msg=buildWinMsg();if(!msg)return;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');}
+window.shareWin=shareWin;
+function sharePollaStandings(){if(!polStand.length)return;recalcStandings();var srt=polStand.slice().sort(function(a,b){return b.wins-a.wins||b.pts-a.pts;});var medals=['🥇','🥈','🥉'];var lines=[];lines.push('🐯 *CARAYACA TIGER SON\'S*');lines.push('🏆 *La Polla — Clasificación*');lines.push('━━━━━━━━━━━━━━━━━');for(var i=0;i<srt.length;i++){var p=srt[i];var medal=i<3?medals[i]:(i+1)+'.';lines.push(medal+' *'+p.name+'* — '+p.wins+'G '+p.losses+'P · '+p.pts+' pts');}lines.push('');lines.push('📊 '+polRounds.length+' rondas jugadas');window.open('https://wa.me/?text='+encodeURIComponent(lines.join('\n')),'_blank');}
+window.sharePollaStandings=sharePollaStandings;
+function renderHist(){var c=gid('histC');if(!handHist.length){c.innerHTML='<p class="nh">Aún no se han jugado manos.</p>';return;}var h='<table><thead><tr><th>#</th><th>Inició</th><th style="color:#5bb3e0">A·C</th><th style="color:#5bb3e0">Acum</th><th style="color:#e05b9a">B·D</th><th style="color:#e05b9a">Acum</th></tr></thead><tbody>';handHist.forEach(function(x){var cA=x.pA===null?'<span style="color:var(--muted)">—</span>':x.emp?'<span class="te">='+x.pA+'</span>':'<b style="color:#5bb3e0">'+x.pA+'</b>';var cB=x.pB===null?'<span style="color:var(--muted)">—</span>':x.emp?'<span class="te">='+x.pB+'</span>':'<b style="color:#e05b9a">'+x.pB+'</b>';var aA=x.pA!==null?'<small style="color:var(--muted)">'+x.cA+'</small>':'<span style="color:var(--muted)">—</span>';var aB=x.pB!==null?'<small style="color:var(--muted)">'+x.cB+'</small>':'<span style="color:var(--muted)">—</span>';h+='<tr><td><b>'+x.hand+'</b></td><td style="color:var(--accent2);font-size:.7rem">'+x.st+'</td><td>'+cA+'</td><td>'+aA+'</td><td>'+cB+'</td><td>'+aB+'</td></tr>';});h+='</tbody></table>';c.innerHTML=h;}
+function recalcStandings(){var idxMap={};var si;for(si=0;si<polStand.length;si++){polStand[si].wins=0;polStand[si].losses=0;polStand[si].pts=0;polStand[si].ptsAgainst=0;polStand[si].bye=0;idxMap[Number(polStand[si].id)]=si;}var ri,bi,mi,t1i,t2i,score1,score2,pidN,idx;for(ri=0;ri<polRounds.length;ri++){var round=polRounds[ri];if(round.byes&&round.byes.length>0){for(bi=0;bi<round.byes.length;bi++){pidN=Number(round.byes[bi]);if(idxMap.hasOwnProperty(pidN)){polStand[idxMap[pidN]].bye++;}}}for(mi=0;mi<round.matches.length;mi++){var match=round.matches[mi];if(!match.done)continue;score1=Number(match.score1)||0;score2=Number(match.score2)||0;for(t1i=0;t1i<match.team1.length;t1i++){pidN=Number(match.team1[t1i]);if(idxMap.hasOwnProperty(pidN)){idx=idxMap[pidN];polStand[idx].pts+=score1;if(score1>=score2){polStand[idx].wins++;}else{polStand[idx].losses++;}}}for(t2i=0;t2i<match.team2.length;t2i++){pidN=Number(match.team2[t2i]);if(idxMap.hasOwnProperty(pidN)){idx=idxMap[pidN];polStand[idx].pts+=score2;if(score2>score1){polStand[idx].wins++;}else{polStand[idx].losses++;}}}}}}
+function selSys(s){polSys=s;gid('sysSwiss').classList.toggle('sel',s==='swiss');gid('sysRobin').classList.toggle('sel',s==='robin');}
 window.selSys=selSys;
-
-function updPI(){
-  var n=parseInt(gid('pNP').value)||4; n=Math.max(4,Math.min(24,n));
-  var mt=parseInt(gid('pNT').value)||1; mt=Math.min(mt,Math.floor(n/4)); mt=Math.max(1,mt);
-  gid('pNP').value=n; gid('pNT').value=mt;
-  var play=mt*4, sit=n-play, bi=gid('byeInfo');
-  if(sit>0){ bi.style.display='block'; bi.textContent='⚠ Con '+n+' jugadores y '+mt+' mesa'+(mt>1?'s':'')+': juegan '+play+', descansan '+sit+' por ronda.'; }
-  else bi.style.display='none';
-  var c=gid('pNames'); c.innerHTML='';
-  for(var i=1;i<=n;i++){
-    var inp=document.createElement('input');
-    inp.type='text'; inp.placeholder='Jugador '+i; inp.maxLength=14; inp.id='pp'+i; inp.inputMode='text';
-    c.appendChild(inp);
-  }
-}
+function updPI(){var n=parseInt(gid('pNP').value)||4;n=Math.max(4,Math.min(24,n));var mt=parseInt(gid('pNT').value)||1;mt=Math.min(mt,Math.floor(n/4));mt=Math.max(1,mt);gid('pNP').value=n;gid('pNT').value=mt;var play=mt*4,sit=n-play,bi2=gid('byeInfo');if(sit>0){bi2.style.display='block';bi2.textContent='⚠ Con '+n+' jugadores y '+mt+' mesa'+(mt>1?'s':'')+': juegan '+play+', descansan '+sit+' por ronda.';}else bi2.style.display='none';var c=gid('pNames');c.innerHTML='';for(var pi=1;pi<=n;pi++){var inp=document.createElement('input');inp.type='text';inp.placeholder='Jugador '+pi;inp.maxLength=14;inp.id='pp'+pi;inp.inputMode='text';c.appendChild(inp);}}
 window.updPI=updPI;
-
-function renderPollaPage(){
-  updPI();
-  if(polRounds.length>0){ gid('pollaSetup').style.display='none'; renderBracket(); gid('pollaBracket').style.display='block'; }
-  else { gid('pollaSetup').style.display='block'; gid('pollaBracket').style.display='none'; }
-}
-
-// ── tournament generation ─────────────────────
-function genTournament(){
-  var n=parseInt(gid('pNP').value)||4;
-  var tables=parseInt(gid('pNT').value)||1;
-  polGoal=parseInt(gid('pG').value)||100;
-  polTables=tables;
-  polPlayers=[];
-  for(var i=1;i<=n;i++){
-    var v=gid('pp'+i);
-    polPlayers.push({id:i,name:(v&&v.value.trim())||('Jugador '+i)});
-  }
-  polRounds=[]; polRound=0;
-  polStand=polPlayers.map(function(p){ return {id:p.id,name:p.name,wins:0,losses:0,pts:0,ptsAgainst:0,bye:0}; });
-  if(polSys==='swiss'){
-    polRounds.push(mkRound(shuffle(polPlayers.slice()),tables,1));
-  } else {
-    var all=rrRounds(polPlayers,tables);
-    for(var r=0;r<all.length;r++) polRounds.push(all[r]);
-  }
-  savePol();
-  if(polPlayers.length>=4){
-    var f=function(id,v){ var el=gid(id); if(el) el.value=v; };
-    f('nameA',polPlayers[0].name); f('nameC',polPlayers[1].name);
-    f('nameB',polPlayers[2].name); f('nameD',polPlayers[3].name);
-    toast('✅ Jugadores cargados en Partida');
-  }
-  gid('pollaSetup').style.display='none';
-  gid('pollaBracket').style.display='block';
-  renderBracket();
-}
+function renderPollaPage(){updPI();if(polRounds.length>0){gid('pollaSetup').style.display='none';renderBracket();gid('pollaBracket').style.display='block';}else{gid('pollaSetup').style.display='block';gid('pollaBracket').style.display='none';}}
+function genTournament(){var n=parseInt(gid('pNP').value)||4;var tables=parseInt(gid('pNT').value)||1;polGoal=parseInt(gid('pG').value)||100;polTables=tables;polPlayers=[];for(var gi2=1;gi2<=n;gi2++){var v=gid('pp'+gi2);polPlayers.push({id:gi2,name:(v&&v.value.trim())||('Jugador '+gi2)});}polRounds=[];polRound=0;polStand=polPlayers.map(function(p){return{id:p.id,name:p.name,wins:0,losses:0,pts:0,ptsAgainst:0,bye:0};});if(polSys==='swiss'){polRounds.push(mkRound(shuffle(polPlayers.slice()),tables,1));}else{var all=rrRounds(polPlayers,tables);for(var rr=0;rr<all.length;rr++)polRounds.push(all[rr]);}savePol();if(polPlayers.length>=4){var f=function(id2,v2){var el=gid(id2);if(el)el.value=v2;};f('nameA',polPlayers[0].name);f('nameC',polPlayers[1].name);f('nameB',polPlayers[2].name);f('nameD',polPlayers[3].name);toast('✅ Jugadores cargados en Partida');}gid('pollaSetup').style.display='none';gid('pollaBracket').style.display='block';renderBracket();}
 window.genTournament=genTournament;
-
-function mkRound(players, tables, rNum){
-  var play=tables*4, n=players.length, byes=[], active=[];
-  if(n<=play){
-    active=players.slice();
-  } else {
-    var byeSnap={};
-    for(var k=0;k<polStand.length;k++) byeSnap[polStand[k].id]=polStand[k].bye||0;
-    var sorted=players.slice().sort(function(a,b){
-      var da=byeSnap[a.id]||0, db=byeSnap[b.id]||0;
-      return da-db;
-    });
-    var sitting=n-play;
-    for(var i=0;i<sitting;i++) byes.push(sorted[i].id);
-    var byeSet={};
-    for(var j=0;j<byes.length;j++) byeSet[byes[j]]=true;
-    for(var m=0;m<players.length;m++){
-      if(!byeSet[players[m].id]) active.push(players[m]);
-    }
-    for(var b=0;b<byes.length;b++){
-      for(var s=0;s<polStand.length;s++){
-        if(polStand[s].id===byes[b]){ polStand[s].bye=(polStand[s].bye||0)+1; break; }
-      }
-    }
-  }
-  return {round:rNum, matches:mkMatches(shuffle(active),tables), byes:byes};
-}
-
-function mkMatches(players, tables){
-  var matches=[];
-  for(var i=0;i<tables;i++){
-    var t=players.slice(i*4,(i+1)*4);
-    if(t.length<4) break;
-    matches.push({table:i+1,team1:[t[0].id,t[2].id],team2:[t[1].id,t[3].id],score1:null,score2:null,done:false});
-  }
-  return matches;
-}
-
-function rrRounds(players, tables){
-  var n=players.length, rounds=[], byeC={};
-  for(var i=0;i<n;i++) byeC[players[i].id]=0;
-  var numR=n; if(n===tables*4) numR=n-1;
-  for(var r=0;r<numR;r++){
-    var sit=n-tables*4;
-    var sorted=players.slice();
-    if(sit>0){
-      sorted.sort(function(a,b){ return byeC[b.id]-byeC[a.id]||(Math.random()-.5); });
-      var byes=sorted.slice(tables*4).map(function(p){ return p.id; });
-      byes.forEach(function(id){ byeC[id]++; });
-      sorted=sorted.slice(0,tables*4);
-      rounds.push({round:r+1, matches:mkMatches(shuffle(sorted),tables), byes:byes});
-    } else {
-      rounds.push({round:r+1, matches:mkMatches(shuffle(sorted),tables), byes:[]});
-    }
-  }
-  return rounds;
-}
-
-// ── bracket render ────────────────────────────
-function renderBracket(){
-  var el=gid('pollaBracket'); el.style.display='block';
-  var h='';
-  h+='<div class="card"><div class="ct">🏅 Clasificación</div>';
-  h+='<table class="stbl"><thead><tr><th>#</th><th>Jugador</th><th>G</th><th>P</th><th>Desc</th><th>Pts</th></tr></thead><tbody>';
-  var srt=polStand.slice().sort(function(a,b){ return b.wins-a.wins||b.pts-a.pts; });
-  srt.forEach(function(p,i){
-    h+='<tr><td class="'+(i===0?'r1':'')+'">'+(i+1)+'</td>'
-      +'<td style="text-align:left;'+(i===0?'color:var(--accent2);font-weight:700;':'')+'">'+p.name+'</td>'
-      +'<td style="color:var(--green)">'+p.wins+'</td><td style="color:var(--accent)">'+p.losses+'</td>'
-      +'<td style="color:var(--muted)">'+(p.bye||0)+'</td><td>'+p.pts+'</td></tr>';
-  });
-  h+='</tbody></table>';
-  if(polSys==='swiss'){
-    var cr=polRounds[polRound];
-    if(cr&&cr.matches.every(function(m){ return m.done; })){
-      h+='<button onclick="nxtSwiss()" style="width:100%;margin-top:10px;padding:12px;background:var(--purple);border:none;color:#fff;border-radius:8px;font-weight:bold;cursor:pointer;font-size:.88rem;">⚡ Generar Ronda '+(polRound+2)+'</button>';
-    }
-  }
-  h+='</div>';
-  polRounds.forEach(function(round,ri){
-    h+='<div class="card"><div class="rh"><span class="rt">Ronda '+round.round+'</span>';
-    var done=round.matches.every(function(m){ return m.done; });
-    h+='<span class="rb">'+(done?'✓ Completada':'En curso')+'</span></div>';
-    if(round.byes&&round.byes.length){
-      var bn=round.byes.map(function(id){ return plName(id); }).join(', ');
-      h+='<div style="font-size:.72rem;color:var(--accent2);background:#3a2500;border-radius:8px;padding:5px 10px;margin-bottom:8px;">⏸ Descansan: '+bn+'</div>';
-    }
-    round.matches.forEach(function(match,mi){
-      var t1=match.team1.map(function(id){ return plName(id); }).join(' & ');
-      var t2=match.team2.map(function(id){ return plName(id); }).join(' & ');
-      h+='<div class="mc"><div class="mh">Mesa '+match.table+' — Meta: '+polGoal+' pts</div>';
-      h+='<div class="mt"><div class="mtt t1"><div class="mtn">'+t1+'</div><div class="mts">'+(match.score1!==null?match.score1+' pts':'—')+'</div></div>';
-      h+='<div class="mvs">vs</div>';
-      h+='<div class="mtt t2"><div class="mtn">'+t2+'</div><div class="mts">'+(match.score2!==null?match.score2+' pts':'—')+'</div></div></div>';
-      if(!match.done){
-        h+='<div class="msr"><input type="number" id="ms'+ri+'_'+mi+'a" min="0" placeholder="0" inputmode="numeric">';
-        h+='<button class="msb" onclick="subMatch('+ri+','+mi+')">✔ Guardar</button>';
-        h+='<input type="number" id="ms'+ri+'_'+mi+'b" min="0" placeholder="0" inputmode="numeric"></div>';
-        h+='<button onclick="loadMatch('+ri+','+mi+')" style="width:100%;margin-top:6px;padding:8px;background:var(--purple);border:none;color:#fff;border-radius:8px;font-size:.75rem;font-weight:bold;cursor:pointer;">🎮 Jugar esta mesa en Partida</button>';
-      } else {
-        var w=match.score1>match.score2?'w1':'w2';
-        var wn=match.score1>match.score2?t1:t2;
-        h+='<div style="text-align:center"><span class="mwb '+w+'">🏆 '+wn+'</span></div>';
-      }
-      h+='</div>';
-    });
-    h+='</div>';
-  });
-  h+='<div style="text-align:center;margin-bottom:8px;"><button onclick="rstPolla()" style="background:transparent;border:1px solid var(--muted);color:var(--muted);border-radius:8px;padding:8px 18px;font-size:.8rem;cursor:pointer;">🗑 Reiniciar Torneo</button></div>';
-  el.innerHTML=h;
-}
-
-function recalcStandings(){
-  var i,r,b,m,st,w,l;
-  for(i=0;i<polStand.length;i++){
-    polStand[i].wins=0; polStand[i].losses=0; polStand[i].pts=0; polStand[i].bye=0;
-  }
-  for(r=0;r<polRounds.length;r++){
-    var rnd=polRounds[r];
-    if(rnd.byes){
-      for(b=0;b<rnd.byes.length;b++){
-        for(st=0;st<polStand.length;st++){
-          if(Number(polStand[st].id)===Number(rnd.byes[b])){ polStand[st].bye++; break; }
-        }
-      }
-    }
-    for(m=0;m<rnd.matches.length;m++){
-      var mx=rnd.matches[m];
-      if(!mx.done) continue;
-      var s1=Number(mx.score1), s2=Number(mx.score2);
-      var t1=mx.team1, t2=mx.team2;
-      for(st=0;st<polStand.length;st++){
-        var pid=Number(polStand[st].id);
-        for(w=0;w<t1.length;w++){
-          if(Number(t1[w])===pid){ polStand[st].pts+=s1; if(s1>=s2) polStand[st].wins++; else polStand[st].losses++; }
-        }
-        for(l=0;l<t2.length;l++){
-          if(Number(t2[l])===pid){ polStand[st].pts+=s2; if(s2>s1) polStand[st].wins++; else polStand[st].losses++; }
-        }
-      }
-    }
-  }
-}
-
-window.subMatch=function(ri,mi){
-  var s1=parseInt(gid('ms'+ri+'_'+mi+'a').value)||0;
-  var s2=parseInt(gid('ms'+ri+'_'+mi+'b').value)||0;
-  if(s1===0&&s2===0){ alert('Ingresa al menos un puntaje.'); return; }
-  var m=polRounds[ri].matches[mi];
-  m.score1=s1; m.score2=s2; m.done=true;
-  recalcStandings();
-  savePol();
-  setTimeout(function(){ recalcStandings(); savePol(); renderBracket(); }, 50);
-};
-
-window.loadMatch=function(ri,mi){
-  var m=polRounds[ri].matches[mi];
-  if(!m||m.done){ alert('Esta mesa ya fue completada.'); return; }
-  gid('nameA').value=plName(m.team1[0]); gid('nameC').value=plName(m.team1[1]);
-  gid('nameB').value=plName(m.team2[0]); gid('nameD').value=plName(m.team2[1]);
-  goal=polGoal;
-  gid('btn100').classList.toggle('active',polGoal===100);
-  gid('btn200').classList.toggle('active',polGoal===200);
-  pmRef={ri:ri,mi:mi};
-  startGame();
-  toast('🎮 Mesa '+m.table+' cargada — ¡a jugar!');
-};
-
-window.nxtSwiss=function(){
-  var srt=polStand.slice().sort(function(a,b){ return b.wins-a.wins||b.pts-a.pts; });
-  var ord=[];
-  for(var i=0;i<srt.length;i++){ var pl=findPl(srt[i].id); if(pl) ord.push(pl); }
-  polRound++;
-  polRounds.push(mkRound(ord, polTables, polRounds.length+1));
-  savePol(); renderBracket();
-};
-
-window.rstPolla=function(){
-  cConfirm('¿Reiniciar el torneo? Se perderán todos los resultados.',function(){
-    polRounds=[]; polStand=[]; polRound=0;
-    try{ localStorage.removeItem('cts_pol'); }catch(e){}
-    gid('pollaBracket').style.display='none';
-    gid('pollaSetup').style.display='block';
-    updPI();
-  });
-};
-
-// ── tracker ───────────────────────────────────
-function renderTracker(){
-  if(!gameLog.length){
-    gid('sesSum').innerHTML='<p class="ng" style="padding:10px;">Sin partidas registradas.</p>';
-    gid('gameLog').innerHTML='<p class="ng">Aún no hay partidas completadas.</p>';
-    return;
-  }
-  var wA=0,wB=0,zA=0,zB=0,tot={A:0,B:0,C:0,D:0};
-  gameLog.forEach(function(g){
-    if(g.winner==='A'){wA++;if(g.isZapato)zB++;} else {wB++;if(g.isZapato)zA++;}
-    tot.A+=g.scoreA;tot.B+=g.scoreB;tot.C+=g.scoreC;tot.D+=g.scoreD;
-  });
-  var ln=gameLog[gameLog.length-1].names;
-  gid('sesSum').innerHTML='<div class="ct" style="margin-bottom:10px;">🏅 Resumen — '+gameLog.length+' partida'+(gameLog.length!==1?'s':'')+'</div>'
-    +'<div class="st"><div class="sp spa"><div class="spn">🔵 Pareja A · C</div><div class="sw">'+wA+'</div><div class="swl">victoria'+(wA!==1?'s':'')+'</div>'+(zB>0?'<div class="sz">👟 '+zB+' Zapato'+(zB!==1?'s':'')+'</div>':'')+'</div>'
-    +'<div class="sp spb"><div class="spn">🔴 Pareja B · D</div><div class="sw">'+wB+'</div><div class="swl">victoria'+(wB!==1?'s':'')+'</div>'+(zA>0?'<div class="sz">👟 '+zA+' Zapato'+(zA!==1?'s':'')+'</div>':'')+'</div></div>'
-    +'<div class="spl">'+['A','B','C','D'].map(function(p){ return '<div class="spp"><div class="sppn">'+ln[p]+'</div><div class="sppt">'+tot[p]+'</div></div>'; }).join('')+'</div>';
-  var h='';
-  var rev=gameLog.slice().reverse();
-  rev.forEach(function(g){
-    var aW=g.winner==='A';
-    h+='<div class="glc"><div class="glm">Partida #'+g.gameNum+' · '+g.date+' '+g.time+' · Meta '+g.goal+' pts · '+g.hands+' manos</div>'
-      +'<div class="glw"><span class="glwn '+(aW?'wa':'wb')+'">🏆 '+g.winnerPair+'</span>'+(g.isZapato?'<span class="zt">👟 ZAPATO</span>':'')+'</div>'
-      +'<div class="gls"><div class="lp lpa"><div class="lpt">🔵 Pareja A · C</div><div class="lps">'+g.scorePA+'</div><div class="lppl"><span>'+g.names.A+': '+g.scoreA+'</span><span>'+g.names.C+': '+g.scoreC+'</span></div></div>'
-      +'<div class="lp lpb"><div class="lpt">🔴 Pareja B · D</div><div class="lps">'+g.scorePB+'</div><div class="lppl"><span>'+g.names.B+': '+g.scoreB+'</span><span>'+g.names.D+': '+g.scoreD+'</span></div></div></div></div>';
-  });
-  gid('gameLog').innerHTML=h;
-}
-
-// ── CSV ───────────────────────────────────────
-function exportCSV(){
-  if(!gameLog.length){ alert('No hay partidas registradas para exportar.'); return; }
-  var L=[];
-  L.push('CARAYACA TIGER SONS - Resumen de Sesion');
-  L.push('Exportado:,"'+new Date().toLocaleDateString('es-VE')+' '+new Date().toLocaleTimeString('es-VE')+'"');
-  L.push('');
-  L.push('Detalle por Partida');
-  var n0=gameLog[0].names;
-  L.push('Partida,Fecha,Hora,Meta,Manos,Ganador,Pareja AC,'+n0.A+','+n0.C+',Pareja BD,'+n0.B+','+n0.D+',Zapato');
-  gameLog.forEach(function(g){ L.push([g.gameNum,'"'+g.date+'"','"'+g.time+'"',g.goal,g.hands,'"'+g.winnerPair+'"',g.scorePA,g.scoreA,g.scoreC,g.scorePB,g.scoreB,g.scoreD,g.isZapato?'SI':'NO'].join(',')); });
-  L.push('');
-  var tot={A:0,B:0,C:0,D:0},wA=0,wB=0,zA=0,zB=0;
-  gameLog.forEach(function(g){ tot.A+=g.scoreA;tot.B+=g.scoreB;tot.C+=g.scoreC;tot.D+=g.scoreD; if(g.winner==='A'){wA++;if(g.isZapato)zB++;} else {wB++;if(g.isZapato)zA++;} });
-  var ln=gameLog[gameLog.length-1].names;
-  L.push('Totales por Jugador'); L.push('Jugador,Pareja,Puntos,Victorias,Zapatos');
-  L.push('"'+ln.A+'",A-C,'+tot.A+','+wA+','+zB); L.push('"'+ln.C+'",A-C,'+tot.C+','+wA+','+zB);
-  L.push('"'+ln.B+'",B-D,'+tot.B+','+wB+','+zA); L.push('"'+ln.D+'",B-D,'+tot.D+','+wB+','+zA);
-  L.push(''); L.push('Victorias AC,'+wA); L.push('Victorias BD,'+wB);
-  var csv=L.join('\n');
-  var blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
-  var url=URL.createObjectURL(blob);
-  var a=document.createElement('a'); a.href=url; a.download='CarayacaTigerSons_'+new Date().toISOString().slice(0,10)+'.csv';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-  toast('📥 CSV exportado correctamente');
-}
+function mkRound(players,tables,rNum){var play=tables*4,n=players.length,byes=[],active=[];if(n<=play){active=players.slice();}else{var byeSnap={};for(var k=0;k<polStand.length;k++)byeSnap[Number(polStand[k].id)]=polStand[k].bye||0;var sorted=players.slice().sort(function(a,b){return(byeSnap[Number(a.id)]||0)-(byeSnap[Number(b.id)]||0);});var sitting=n-play;for(var si2=0;si2<sitting;si2++)byes.push(Number(sorted[si2].id));var byeSet={};for(var j=0;j<byes.length;j++)byeSet[byes[j]]=true;for(var m=0;m<players.length;m++){if(!byeSet[Number(players[m].id)])active.push(players[m]);}for(var b2=0;b2<byes.length;b2++){for(var s=0;s<polStand.length;s++){if(Number(polStand[s].id)===byes[b2]){polStand[s].bye=(polStand[s].bye||0)+1;break;}}}}return{round:rNum,matches:mkMatches(shuffle(active),tables),byes:byes};}
+function mkMatches(players,tables){var matches=[];for(var i=0;i<tables;i++){var t=players.slice(i*4,(i+1)*4);if(t.length<4)break;matches.push({table:i+1,team1:[Number(t[0].id),Number(t[2].id)],team2:[Number(t[1].id),Number(t[3].id)],score1:null,score2:null,done:false});}return matches;}
+function rrRounds(players,tables){var n=players.length,rounds=[],byeC={};for(var i=0;i<n;i++)byeC[Number(players[i].id)]=0;var numR=n;if(n===tables*4)numR=n-1;for(var r=0;r<numR;r++){var sit=n-tables*4;var sorted2=players.slice();if(sit>0){sorted2.sort(function(a,b){return byeC[Number(b.id)]-byeC[Number(a.id)]||(Math.random()-.5);});var byes2=sorted2.slice(tables*4).map(function(p){return Number(p.id);});byes2.forEach(function(id){byeC[id]++;});sorted2=sorted2.slice(0,tables*4);rounds.push({round:r+1,matches:mkMatches(shuffle(sorted2),tables),byes:byes2});}else{rounds.push({round:r+1,matches:mkMatches(shuffle(sorted2),tables),byes:[]});}}return rounds;}
+function renderBracket(){recalcStandings();var el=gid('pollaBracket');el.style.display='block';var h='';h+='<div class="card"><div class="ct">🏅 Clasificación</div>';h+='<table class="stbl"><thead><tr><th>#</th><th>Jugador</th><th>G</th><th>P</th><th>Desc</th><th>Pts</th></tr></thead><tbody>';var srt=polStand.slice().sort(function(a,b){return b.wins-a.wins||b.pts-a.pts;});srt.forEach(function(p,i){h+='<tr><td class="'+(i===0?'r1':'')+'">'+(i+1)+'</td><td style="text-align:left;'+(i===0?'color:var(--accent2);font-weight:700;':'')+'">'+p.name+'</td><td style="color:var(--green)">'+p.wins+'</td><td style="color:var(--accent)">'+p.losses+'</td><td style="color:var(--muted)">'+(p.bye||0)+'</td><td>'+p.pts+'</td></tr>';});h+='</tbody></table>';if(polSys==='swiss'){var cr=polRounds[polRound];if(cr&&cr.matches.every(function(m2){return m2.done;})){h+='<button onclick="nxtSwiss()" style="width:100%;margin-top:10px;padding:12px;background:var(--purple);border:none;color:#fff;border-radius:8px;font-weight:bold;cursor:pointer;font-size:.88rem;">⚡ Generar Ronda '+(polRound+2)+'</button>';}}h+='</div>';polRounds.forEach(function(round,ri){h+='<div class="card"><div class="rh"><span class="rt">Ronda '+round.round+'</span>';var done2=round.matches.every(function(m2){return m2.done;});h+='<span class="rb">'+(done2?'✓ Completada':'En curso')+'</span></div>';if(round.byes&&round.byes.length){var bn=round.byes.map(function(id){return plName(id);}).join(', ');h+='<div style="font-size:.72rem;color:var(--accent2);background:#3a2500;border-radius:8px;padding:5px 10px;margin-bottom:8px;">⏸ Descansan: '+bn+'</div>';}round.matches.forEach(function(match,mi){var t1n=match.team1.map(function(id){return plName(id);}).join(' & ');var t2n=match.team2.map(function(id){return plName(id);}).join(' & ');h+='<div class="mc"><div class="mh">Mesa '+match.table+' — Meta: '+polGoal+' pts</div>';h+='<div class="mt"><div class="mtt t1"><div class="mtn">'+t1n+'</div><div class="mts">'+(match.score1!==null?match.score1+' pts':'—')+'</div></div>';h+='<div class="mvs">vs</div>';h+='<div class="mtt t2"><div class="mtn">'+t2n+'</div><div class="mts">'+(match.score2!==null?match.score2+' pts':'—')+'</div></div></div>';if(!match.done){h+='<div class="msr"><input type="number" id="ms'+ri+'_'+mi+'a" min="0" placeholder="0" inputmode="numeric">';h+='<button class="msb" onclick="subMatch('+ri+','+mi+')">✔ Guardar</button>';h+='<input type="number" id="ms'+ri+'_'+mi+'b" min="0" placeholder="0" inputmode="numeric"></div>';h+='<button onclick="loadMatch('+ri+','+mi+')" style="width:100%;margin-top:6px;padding:8px;background:var(--purple);border:none;color:#fff;border-radius:8px;font-size:.75rem;font-weight:bold;cursor:pointer;">🎮 Jugar esta mesa en Partida</button>';}else{var w2=match.score1>match.score2?'w1':'w2';var wn=match.score1>match.score2?t1n:t2n;h+='<div style="text-align:center"><span class="mwb '+w2+'">🏆 '+wn+'</span></div>';}h+='</div>';});h+='</div>';});var allDone=true;for(var adi=0;adi<polRounds.length;adi++){for(var adj=0;adj<polRounds[adi].matches.length;adj++){if(!polRounds[adi].matches[adj].done){allDone=false;break;}}if(!allDone)break;}if(allDone&&polRounds.length>0){var podium=polStand.slice().sort(function(a,b){return b.wins-a.wins||b.pts-a.pts;});var medals=['🥇','🥈','🥉'];h+='<div class="card" style="border:2px solid var(--accent2);"><div class="ct">🏆 Podio del Torneo</div>';for(var pi=0;pi<Math.min(3,podium.length);pi++){var pp=podium[pi];var bgc=pi===0?'#3a2500':pi===1?'#1a1a2e':'#1a0a0a';var brc=pi===0?'var(--accent2)':pi===1?'#aaa':'#cd7f32';h+='<div style="display:flex;align-items:center;gap:10px;background:'+bgc+';border:1px solid '+brc+';border-radius:10px;padding:10px 14px;margin-bottom:6px;"><span style="font-size:1.6rem;">'+medals[pi]+'</span><div style="flex:1;"><div style="font-size:.95rem;font-weight:bold;color:'+brc+';">'+pp.name+'</div><div style="font-size:.7rem;color:var(--muted);">'+pp.wins+' victorias · '+pp.pts+' pts</div></div></div>';}h+='</div>';}h+='<div style="text-align:center;margin-bottom:8px;display:flex;gap:8px;justify-content:center;">';h+='<button onclick="sharePollaStandings()" style="background:#25D366;border:none;color:#fff;border-radius:8px;padding:8px 18px;font-size:.8rem;cursor:pointer;font-weight:bold;">📲 Compartir Clasificación</button>';h+='<button onclick="rstPolla()" style="background:transparent;border:1px solid var(--muted);color:var(--muted);border-radius:8px;padding:8px 18px;font-size:.8rem;cursor:pointer;">🗑 Reiniciar Torneo</button>';h+='</div>';el.innerHTML=h;}
+window.subMatch=function(ri,mi){var s1=parseInt(gid('ms'+ri+'_'+mi+'a').value)||0;var s2=parseInt(gid('ms'+ri+'_'+mi+'b').value)||0;if(s1===0&&s2===0){alert('Ingresa al menos un puntaje.');return;}var mx=polRounds[ri].matches[mi];mx.score1=s1;mx.score2=s2;mx.done=true;recalcStandings();savePol();renderBracket();};
+window.loadMatch=function(ri,mi){var mx=polRounds[ri].matches[mi];if(!mx||mx.done){alert('Esta mesa ya fue completada.');return;}gid('nameA').value=plName(mx.team1[0]);gid('nameC').value=plName(mx.team1[1]);gid('nameB').value=plName(mx.team2[0]);gid('nameD').value=plName(mx.team2[1]);goal=polGoal;gid('btn100').classList.toggle('active',polGoal===100);gid('btn200').classList.toggle('active',polGoal===200);pmRef={ri:ri,mi:mi};startGame();toast('🎮 Mesa '+mx.table+' cargada — ¡a jugar!');};
+window.nxtSwiss=function(){recalcStandings();var srt=polStand.slice().sort(function(a,b){return b.wins-a.wins||b.pts-a.pts;});var ord=[];for(var i=0;i<srt.length;i++){var nid2=Number(srt[i].id);for(var j=0;j<polPlayers.length;j++){if(Number(polPlayers[j].id)===nid2){ord.push(polPlayers[j]);break;}}}polRound++;polRounds.push(mkRound(ord,polTables,polRounds.length+1));savePol();renderBracket();};
+window.rstPolla=function(){cConfirm('¿Reiniciar el torneo? Se perderán todos los resultados.',function(){polRounds=[];polStand=[];polRound=0;try{localStorage.removeItem('cts_pol');}catch(e){}gid('pollaBracket').style.display='none';gid('pollaSetup').style.display='block';updPI();setTimeout(function(){cConfirm('¿También deseas borrar el registro de partidas?\n\n⚠ Esta acción no se puede deshacer.',function(){gameLog=[];try{localStorage.removeItem('cts_v2');}catch(e){}toast('🗑 Torneo y registro borrados');});},400);});};
+function renderTracker(){if(!gameLog.length){gid('sesSum').innerHTML='<p class="ng" style="padding:10px;">Sin partidas registradas.</p>';gid('gameLog').innerHTML='<p class="ng">Aún no hay partidas completadas.</p>';return;}var wA=0,wB=0,zA=0,zB=0,tot={A:0,B:0,C:0,D:0};gameLog.forEach(function(g){if(g.winner==='A'){wA++;if(g.isZapato)zB++;}else{wB++;if(g.isZapato)zA++;}tot.A+=g.scoreA;tot.B+=g.scoreB;tot.C+=g.scoreC;tot.D+=g.scoreD;});var ln=gameLog[gameLog.length-1].names;gid('sesSum').innerHTML='<div class="ct" style="margin-bottom:10px;">🏅 Resumen — '+gameLog.length+' partida'+(gameLog.length!==1?'s':'')+'</div><div class="st"><div class="sp spa"><div class="spn">🔵 Pareja A · C</div><div class="sw">'+wA+'</div><div class="swl">victoria'+(wA!==1?'s':'')+'</div>'+(zB>0?'<div class="sz">👟 '+zB+' Zapato'+(zB!==1?'s':'')+'</div>':'')+'</div><div class="sp spb"><div class="spn">🔴 Pareja B · D</div><div class="sw">'+wB+'</div><div class="swl">victoria'+(wB!==1?'s':'')+'</div>'+(zA>0?'<div class="sz">👟 '+zA+' Zapato'+(zA>1?'s':'')+'</div>':'')+'</div></div><div class="spl">'+['A','B','C','D'].map(function(p){return '<div class="spp"><div class="sppn">'+ln[p]+'</div><div class="sppt">'+tot[p]+'</div></div>';}).join('')+'</div>';if(polStand.length>0){var pSrt=polStand.slice().sort(function(a,b){return b.wins-a.wins||b.pts-a.pts;});var pHtml='<div class="ct" style="margin-bottom:10px;">🏆 Acumulado por Jugador — La Polla</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:5px;">';pSrt.forEach(function(pl){pHtml+='<div class="spp"><div class="sppn">'+pl.name+'</div><div class="sppt">'+pl.pts+'</div><div style="font-size:.6rem;color:var(--muted);">'+pl.wins+'G '+pl.losses+'P</div></div>';});pHtml+='</div>';gid('sesSum').innerHTML+=pHtml;}var h='';gameLog.slice().reverse().forEach(function(g){var aW=g.winner==='A';h+='<div class="glc"><div class="glm">Partida #'+g.gameNum+' · '+g.date+' '+g.time+' · Meta '+g.goal+' pts · '+g.hands+' manos</div><div class="glw"><span class="glwn '+(aW?'wa':'wb')+'">🏆 '+g.winnerPair+'</span>'+(g.isZapato?'<span class="zt">👟 ZAPATO</span>':'')+'</div><div class="gls"><div class="lp lpa"><div class="lpt">🔵 Pareja A · C</div><div class="lps">'+g.scorePA+'</div><div class="lppl"><span>'+g.names.A+': '+g.scoreA+'</span><span>'+g.names.C+': '+g.scoreC+'</span></div></div><div class="lp lpb"><div class="lpt">🔴 Pareja B · D</div><div class="lps">'+g.scorePB+'</div><div class="lppl"><span>'+g.names.B+': '+g.scoreB+'</span><span>'+g.names.D+': '+g.scoreD+'</span></div></div></div></div>';});gid('gameLog').innerHTML=h;}
+function exportCSV(){if(!gameLog.length){alert('No hay partidas registradas para exportar.');return;}var L=[];L.push('CARAYACA TIGER SONS - Resumen de Sesion');L.push('Exportado:,"'+new Date().toLocaleDateString('es-VE')+' '+new Date().toLocaleTimeString('es-VE')+'"');L.push('');L.push('Detalle por Partida');var n0=gameLog[0].names;L.push('Partida,Fecha,Hora,Meta,Manos,Ganador,Pareja AC,'+n0.A+','+n0.C+',Pareja BD,'+n0.B+','+n0.D+',Zapato');gameLog.forEach(function(g){L.push([g.gameNum,'"'+g.date+'"','"'+g.time+'"',g.goal,g.hands,'"'+g.winnerPair+'"',g.scorePA,g.scoreA,g.scoreC,g.scorePB,g.scoreB,g.scoreD,g.isZapato?'SI':'NO'].join(','));});L.push('');var tot2={A:0,B:0,C:0,D:0},wA2=0,wB2=0,zA2=0,zB2=0;gameLog.forEach(function(g){tot2.A+=g.scoreA;tot2.B+=g.scoreB;tot2.C+=g.scoreC;tot2.D+=g.scoreD;if(g.winner==='A'){wA2++;if(g.isZapato)zB2++;}else{wB2++;if(g.isZapato)zA2++;}});var ln2=gameLog[gameLog.length-1].names;L.push('Totales por Jugador');L.push('Jugador,Pareja,Puntos,Victorias,Zapatos');L.push('"'+ln2.A+'",A-C,'+tot2.A+','+wA2+','+zB2);L.push('"'+ln2.C+'",A-C,'+tot2.C+','+wA2+','+zB2);L.push('"'+ln2.B+'",B-D,'+tot2.B+','+wB2+','+zA2);L.push('"'+ln2.D+'",B-D,'+tot2.D+','+wB2+','+zA2);L.push('');L.push('Victorias AC,'+wA2);L.push('Victorias BD,'+wB2);var csv=L.join('\n');var blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='CarayacaTigerSons_'+new Date().toISOString().slice(0,10)+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);toast('📥 CSV exportado correctamente');}
 window.exportCSV=exportCSV;
-
-// ── reset ─────────────────────────────────────
-function showRC(){ gid('resetC').style.display='block'; }
-function hideRC(){ gid('resetC').style.display='none'; }
-function doReset(){ gameLog=[]; try{localStorage.removeItem('cts_v2');}catch(e){} hideRC(); gid('sesSum').innerHTML='<p class="ng" style="padding:10px;">Sin partidas registradas.</p>'; gid('gameLog').innerHTML='<p class="ng">Aún no hay partidas completadas.</p>'; }
-window.showRC=showRC; window.hideRC=hideRC; window.doReset=doReset;
-
-function confirmNG(){ if(gameActive) cConfirm('¿Abandonar la partida actual?',function(){ gameActive=false; goTab('setup'); }); else goTab('setup'); }
+function showRC(){gid('resetC').style.display='block';}function hideRC(){gid('resetC').style.display='none';}function doReset(){gameLog=[];try{localStorage.removeItem('cts_v2');}catch(e){}hideRC();gid('sesSum').innerHTML='<p class="ng" style="padding:10px;">Sin partidas registradas.</p>';gid('gameLog').innerHTML='<p class="ng">Aún no hay partidas completadas.</p>';}
+window.showRC=showRC;window.hideRC=hideRC;window.doReset=doReset;
+function confirmNG(){if(gameActive)cConfirm('¿Abandonar la partida actual?',function(){gameActive=false;goTab('setup');});else goTab('setup');}
 window.confirmNG=confirmNG;
-
-function cConfirm(msg,onY){
-  var ov=document.createElement('div');
-  ov.style.cssText='position:fixed;inset:0;background:#000a;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
-  ov.innerHTML='<div style="background:#0f3460;border:1px solid #1e4d7b;border-radius:14px;padding:24px;max-width:300px;width:100%;text-align:center;"><p style="color:#eaf2ff;font-size:.9rem;margin-bottom:16px;">'+msg+'</p><div style="display:flex;gap:8px;"><button id="cy" style="flex:1;padding:10px;background:#e94560;border:none;color:#fff;border-radius:8px;font-weight:bold;cursor:pointer;">Sí</button><button id="cn" style="flex:1;padding:10px;background:transparent;border:1px solid #8899aa;color:#8899aa;border-radius:8px;cursor:pointer;">No</button></div></div>';
-  document.body.appendChild(ov);
-  ov.querySelector('#cy').onclick=function(){ document.body.removeChild(ov); onY(); };
-  ov.querySelector('#cn').onclick=function(){ document.body.removeChild(ov); };
-}
-
-// ── init ──────────────────────────────────────
-loadLog(); loadPol(); if(polRounds.length>0) recalcStandings(); updPI();
-
+function cConfirm(msg,onY){var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;background:#000a;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';ov.innerHTML='<div style="background:#0f3460;border:1px solid #1e4d7b;border-radius:14px;padding:24px;max-width:300px;width:100%;text-align:center;"><p style="color:#eaf2ff;font-size:.9rem;margin-bottom:16px;">'+msg+'</p><div style="display:flex;gap:8px;"><button id="cy" style="flex:1;padding:10px;background:#e94560;border:none;color:#fff;border-radius:8px;font-weight:bold;cursor:pointer;">Sí</button><button id="cn" style="flex:1;padding:10px;background:transparent;border:1px solid #8899aa;color:#8899aa;border-radius:8px;cursor:pointer;">No</button></div></div>';document.body.appendChild(ov);ov.querySelector('#cy').onclick=function(){document.body.removeChild(ov);onY();};ov.querySelector('#cn').onclick=function(){document.body.removeChild(ov);};}
+loadLog();loadPol();if(polRounds.length>0)recalcStandings();updPI();
 })();
 </script>
 </body>
