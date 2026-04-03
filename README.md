@@ -1,2 +1,2 @@
 # Tiger-Domino
-A Domino Tracker with Polla options
+A 28 tiles Caribean style Domino Tracker with Polla options
